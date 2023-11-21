@@ -1,24 +1,20 @@
-import './App.css';
+import Container from 'react-bootstrap/Container';
+import Header from './components/layout/Header';
+import UserItem from './components/users/UserItem';
+import Row from 'react-bootstrap/Row';
 
 function App() {
-  const name = 'John Doe';
-  const func = () => 'From east to west chawarma is the best';
-  const isLoading = false;
-  const showName = false;
-
-  // if (isLoading) return <div>Loading ...</div>;
   return (
-    <div className="App">
-      {isLoading ? (
-        <div>Loading ...</div>
-      ) : (
-        <>
-          <h1>Hello {showName && name}</h1>
-          {1 + 2} <br />
-          {func()}
-        </>
-      )}
-    </div>
+    <>
+      <Header />
+      <Container>
+        <Row>
+          <UserItem />
+          <UserItem />
+          <UserItem />
+        </Row>
+      </Container>
+    </>
   );
 }
 
