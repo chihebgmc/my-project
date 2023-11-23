@@ -1,24 +1,21 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-const user = {
-  id: '1',
-  login: 'mojombo',
-  avatar_url: 'https://avatars.githubusercontent.com/u/1?v=4',
-  html_url: 'https://github.com/mojombo',
-};
 
-const UserItem = () => (
-  <Col md={4} sm={6}>
-    <Card>
-      <Card.Img variant="top" src={user.avatar_url} />
-      <Card.Body>
-        <Card.Title>{user.login}</Card.Title>
-        <Button variant="primary" href={user.html_url} target="_blank">
-          More
-        </Button>
-      </Card.Body>
-    </Card>
-  </Col>
-);
+const UserItem = props => {
+  console.log(props);
+  return (
+    <Col md={4} sm={6} className="mb-3">
+      <Card>
+        <Card.Img variant="top" src={props.user.avatar_url} />
+        <Card.Body>
+          <Card.Title>{props.user.login}</Card.Title>
+          <Button variant="primary" href={props.user.html_url} target="_blank">
+            More
+          </Button>
+        </Card.Body>
+      </Card>
+    </Col>
+  );
+};
 export default UserItem;
