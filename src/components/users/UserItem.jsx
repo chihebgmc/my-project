@@ -9,7 +9,10 @@ const UserItem = props => {
       <Card>
         <Card.Img variant="top" src={props.user.avatar_url} />
         <Card.Body>
-          <Card.Title>{props.user.login}</Card.Title>
+          <Card.Title>
+            {props.children} {props.user.login}
+          </Card.Title>
+
           <Button variant="primary" href={props.user.html_url} target="_blank">
             More
           </Button>

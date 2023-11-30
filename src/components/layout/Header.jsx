@@ -1,6 +1,8 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import logo from './github-mark.png';
+import PropTypes from 'prop-types';
 
 const Header = props => {
   // Destructor of props object
@@ -33,6 +35,14 @@ const Header = props => {
   );
 };
 
-const style = {};
+Header.defaultProps = {
+  navTitle: 'Default title',
+  navLogo: logo,
+};
+
+Header.propTypes = {
+  navTitle: PropTypes.string.isRequired,
+  navLogo: PropTypes.string.isRequired,
+};
 
 export default Header;
